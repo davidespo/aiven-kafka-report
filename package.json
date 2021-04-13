@@ -2,6 +2,7 @@
   "name": "getTopics",
   "version": "0.1.0",
   "description": "",
+  "homepage": "/aiven-kafka-report/",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
