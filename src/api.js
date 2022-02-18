@@ -34,13 +34,7 @@ export class Avn {
     const topic = _.get(res, 'data.topic');
     topic.ts = new Date().toISOString();
 
-    // Object.keys(topic.config).forEach(
-    //   (key) => (topic.config[key].synonyms = undefined),
-    // );
-
-    console.log(topic.cleanup_policy);
     if (topic.cleanup_policy === 'delete') {
-      console.log(topic.topic_name);
       const durationSeconds = topic.retention_hours * 3600;
       let delta = 0;
       topic.partitions.forEach(

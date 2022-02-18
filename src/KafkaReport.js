@@ -6,9 +6,6 @@ import User from './User';
 import SelectableList from './SelectableList';
 import Topics from './Topics';
 
-const TOKEN =
-  'P//yIo9h1RGnK62S/X9rD2mq8dNFaBYiALgqqvJGfeN3pbjqdRULesL+mjskNa/lspjsUByroNjBE/gq10xFq+THpbK9PoitgQnGqAzAk0D7P2jz46Q5BiTAbkeMOTA/cIKSf37F55uFdpUk4DwOq0T08Xxdcehm5Lvkjg1LtxF+X3wjydg/hFYxnRTkXfkNdXN4/KkfTPm4vfFiXNtBu/uTMKqBv0LAgNPuJPMyw6pRrUXyWgFg+0dc3XQuth4vYgGdt0kAuJJig7dywG2CLqxpoTKbrMoYRcBolWiSlXTSMNfkZKlPxfql4kpLy8ArJOVlSoFnKsjgTEZH5NEtjKWru186SO+O2oCmA/g=';
-
 export default ({ token }) => {
   const [me, setMe] = useState(null);
   const [apiError, setApiError] = useState(null);
@@ -67,8 +64,8 @@ export default ({ token }) => {
     <div className="container">
       {apiError && <p className="lead text-danger">{apiError.message}</p>}
       <User user={me} />
-      <div className="row">
-        <div className="col-3">
+      <div className="row mb-4">
+        <div className="col-6">
           <h1>Projects</h1>
           <SelectableList
             items={_.get(me, 'projects')}
@@ -76,7 +73,7 @@ export default ({ token }) => {
             setActiveValue={setActiveProject}
           />
         </div>
-        <div className="col-3">
+        <div className="col-6">
           <h1>Clusters</h1>
           <SelectableList
             items={services}
@@ -85,7 +82,9 @@ export default ({ token }) => {
             setActiveValue={setActiveCluster}
           />
         </div>
-        <div className="col-6">
+      </div>
+      <div className="row">
+        <div className="col-12">
           <h1>Topics</h1>
           <Topics topics={topics} topicsFull={topicsReport} />
         </div>
