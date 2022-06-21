@@ -3,3 +3,7 @@
 First pass at a Kafka Utility
 
 [https://davidespo.github.io/aiven-kafka-report/](https://davidespo.github.io/aiven-kafka-report/)
+
+## Example
+
+![](demo.png)
